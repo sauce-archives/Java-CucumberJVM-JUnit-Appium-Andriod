@@ -1,7 +1,9 @@
-package com.yourcompany.saucecucumberjvm.utils;
+package com.yourcompany.utils;
 
 import com.saucelabs.saucerest.SauceREST;
+import cucumber.api.Scenario;
 import org.json.JSONException;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -19,6 +21,21 @@ public class SauceUtils {
             sauceRESTClient = new SauceREST(username, accessKey);
         }
         return sauceRESTClient;
+    }
+
+    public static DesiredCapabilities CreateCapabilities(Scenario scenario) {
+
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("appiumVersion", System.getenv("appiumVersion"));
+        caps.setCapability("deviceName", System.getenv("deviceName"));
+
+        caps.setCapability("platformName", System.getenv("platformName"));
+        caps.setCapability("app", "https://github.com/saucelabs-sample-test-frameworks/Java-Junit-Appium-iOS/blob/master/resources/GuineaPig-sim-debug.app.zip?raw=true");
+        caps.setCapability("platformVersion", System.getenv("platformVersion"));
+        caps.setCapability("deviceOrientation", System.getenv("deviceOrientation"));
+        caps.setCapability("name", scenario.getName());
+
+        return caps;
     }
 
     public static void UpdateResults(String username, String accessKey, boolean testResults, String sessionId)
