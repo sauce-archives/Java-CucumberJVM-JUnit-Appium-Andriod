@@ -1,5 +1,5 @@
 run_all_in_parallel:
-	make clean_it test_iphone_6_8_4
+	make clean_it test_parallel
 
 clean_it:
 	mvn clean
