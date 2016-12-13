@@ -16,7 +16,7 @@ public class GuineaPigPage {
     @FindBy(id = "i am a link")
     private WebElement theActiveLink;
 
-    @FindBy(xpath = "submittedComments")
+    @FindBy(id = "submittedComments")
     private WebElement yourComments;
 
     @FindBy(id = "comments")
