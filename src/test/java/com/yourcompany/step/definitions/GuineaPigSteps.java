@@ -29,7 +29,7 @@ public class GuineaPigSteps {
     public static final String USERNAME = System.getenv("SAUCE_USERNAME");
     public static final String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
     public static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
-    public static String app = "https://github.com/saucelabs-sample-test-frameworks/Java-Junit-Appium-iOS/blob/master/resources/GuineaPig-sim-debug.app.zip?raw=true";
+    public static String app = "https://github.com/saucelabs-sample-test-frameworks/Java-Junit-Appium-iOS/blob/master/resources/SauceGuineaPig-sim-debug.app.zip?raw=true";
     public static IOSDriver driver;
     public static GuineaPigPage page;
     public String commentInputText;
