@@ -8,8 +8,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.android.AndroidDriver;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -29,8 +28,8 @@ public class GuineaPigSteps {
     public static final String USERNAME = System.getenv("SAUCE_USERNAME");
     public static final String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
     public static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
-    public static String app = "https://github.com/saucelabs-sample-test-frameworks/Java-Junit-Appium-iOS/blob/master/resources/SauceGuineaPig-sim-debug.app.zip?raw=true";
-    public static IOSDriver driver;
+    public static String app = "https://github.com/saucelabs-sample-test-frameworks/GuineaPig-Sample-App/blob/master/android/GuineaPigApp-debug.apk?raw=true";
+    public static AndroidDriver driver;
     public static GuineaPigPage page;
     public String commentInputText;
     public String sessionId;
@@ -61,7 +60,7 @@ public class GuineaPigSteps {
             capabilities.setCapability("build", buildTag);
         }
 
-        driver = new IOSDriver(new URL(URL), capabilities);
+        driver = new AndroidDriver(new URL(URL), capabilities);
         sessionId = driver.getSessionId().toString();
     }
 
